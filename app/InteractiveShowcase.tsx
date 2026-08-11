@@ -47,19 +47,19 @@ const events: EventItem[] = [
 
 const gallery: GalleryItem[] = [
   {
-    image: "/images/gallery/ai-circuit-training.png",
+    image: "/images/gallery/group-aerobics.jpg",
     alt: "Group circuit training session visual",
     label: "GROUP TRAINING",
     caption: "Strength, energy and accountability",
   },
   {
-    image: "/images/gallery/ai-personal-coaching.png",
+    image: "/images/gallery/fitness-tour-action.jpg",
     alt: "Personal strength coaching session visual",
     label: "PERSONAL COACHING",
     caption: "Technique, safety and steady progress",
   },
   {
-    image: "/images/gallery/ai-outdoor-aerobics.png",
+    image: "/images/gallery/outdoor-session.jpg",
     alt: "Outdoor community aerobics session visual",
     label: "COMMUNITY AEROBICS",
     caption: "Moving together, growing stronger",
@@ -96,7 +96,7 @@ export function EventCards() {
           <article className="event-card event-card-clickable" key={event.title}>
             <button type="button" className="event-card-button" onClick={() => setActive(index)} aria-label={`View full details for ${event.title}`}>
               <span className="event-image-wrap">
-                <img src={event.image} alt={event.alt} />
+                <img src={event.image} alt={event.alt} loading="lazy" decoding="async" />
                 <span className="event-view-cue">View full poster <b aria-hidden="true">↗</b></span>
               </span>
               <span className="event-card-copy">
@@ -143,7 +143,7 @@ export function GalleryViewer() {
         {gallery.map((item, index) => (
           <figure className={`gallery-item ${index === 0 ? "gallery-featured" : ""}`} key={item.label}>
             <button type="button" className="gallery-open" onClick={() => setActive(index)} aria-label={`View ${item.label.toLowerCase()} image`}>
-              <img src={item.image} alt={item.alt} />
+              <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
               <span className="gallery-view-cue">View image <b aria-hidden="true">↗</b></span>
               <figcaption><b>{item.label}</b><span>{item.caption}</span></figcaption>
             </button>

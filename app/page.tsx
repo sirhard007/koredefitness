@@ -1,5 +1,6 @@
 import TrainingVideo from "./TrainingVideo";
 import { EventCards, GalleryViewer } from "./InteractiveShowcase";
+import MobileNav from "./MobileNav";
 
 const whatsappBase = "https://wa.me/2348069724058";
 
@@ -32,9 +33,9 @@ const plans = [
 ];
 
 const articles = [
-  { category: "NUTRITION", title: "How to build a Nigerian plate that supports your goals", time: "6 min read", number: "01", slug: "build-a-balanced-nigerian-plate", image: "/images/resources/nutrition-balanced-plate.png" },
-  { category: "TRAINING", title: "The beginner’s guide to strength training without fear", time: "5 min read", number: "02", slug: "beginners-guide-to-strength-training", image: "/images/resources/beginner-strength-training.png" },
-  { category: "MINDSET", title: "Consistency beats intensity: the plan you can actually keep", time: "4 min read", number: "03", slug: "consistency-beats-intensity", image: "/images/resources/fitness-mindset-consistency.png" },
+  { category: "NUTRITION", title: "How to build a Nigerian plate that supports your goals", time: "6 min read", number: "01", slug: "build-a-balanced-nigerian-plate", image: "/images/resources/nutrition-balanced-plate.webp" },
+  { category: "TRAINING", title: "The beginner’s guide to strength training without fear", time: "5 min read", number: "02", slug: "beginners-guide-to-strength-training", image: "/images/resources/beginner-strength-training.webp" },
+  { category: "MINDSET", title: "Consistency beats intensity: the plan you can actually keep", time: "4 min read", number: "03", slug: "consistency-beats-intensity", image: "/images/resources/fitness-mindset-consistency.webp" },
 ];
 
 export default function Home() {
@@ -54,6 +55,7 @@ export default function Home() {
         <a className="button button-small" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20would%20like%20to%20book%20a%20consultation.`} target="_blank" rel="noreferrer">
           Book a consultation <span aria-hidden="true">↗</span>
         </a>
+        <MobileNav whatsappBase={whatsappBase} />
       </header>
 
       <section className="hero" id="top">
@@ -113,7 +115,7 @@ export default function Home() {
       <section className="coach section" id="coach">
         <div className="page-shell coach-grid">
           <div className="coach-visual">
-            <div className="coach-photo coach-real"><img src="/images/gallery/coach-korede-sharp.jpg" alt="Ambassador Coach Korede" /><small>AMB. COACH KOREDE</small></div>
+            <div className="coach-photo coach-real"><img src="/images/gallery/coach-korede-sharp.jpg" alt="Ambassador Coach Korede" loading="lazy" decoding="async" /><small>AMB. COACH KOREDE</small></div>
             <div className="experience-badge"><strong>EIM</strong><span>EXERCISE IS<br />MEDICINE</span></div>
           </div>
           <div className="coach-copy">
@@ -166,11 +168,11 @@ export default function Home() {
           <div className="video-gallery">
             <div className="video-intro"><p className="eyebrow"><span /> Video gallery</p><h3>Fitness in motion</h3><p>Short motion previews now show the energy of a session. Replace them with KoredeFitness footage at final handover.</p></div>
             <figure className="video-card">
-              <TrainingVideo src="/images/gallery/circuit-motion.webm" poster="/images/gallery/ai-circuit-training.png" label="Looping group circuit training preview" />
+              <TrainingVideo src="/images/gallery/circuit-motion.webm" poster="/images/gallery/group-aerobics.jpg" label="Looping group circuit training preview" />
               <figcaption><span className="live-dot" /> <b>GYM CIRCUIT</b><small>Train with purpose</small></figcaption>
             </figure>
             <figure className="video-card">
-              <TrainingVideo src="/images/gallery/aerobics-motion.webm" poster="/images/gallery/ai-outdoor-aerobics.png" label="Looping outdoor aerobics preview" />
+              <TrainingVideo src="/images/gallery/aerobics-motion.webm" poster="/images/gallery/outdoor-session.jpg" label="Looping outdoor aerobics preview" />
               <figcaption><span className="live-dot" /> <b>OUTDOOR ENERGY</b><small>Move with the community</small></figcaption>
             </figure>
           </div>
@@ -206,7 +208,7 @@ export default function Home() {
           {articles.map((article) => (
             <article className="article-card" key={article.number}>
               <a className="article-card-link" href={`/resources/${article.slug}`} aria-label={`Read ${article.title}`}>
-                <div className="article-art"><img src={article.image} alt="" /><span>{article.number}</span><small>{article.category}</small></div>
+                <div className="article-art"><img src={article.image} alt="" loading="lazy" decoding="async" /><span>{article.number}</span><small>{article.category}</small></div>
                 <div className="article-body"><p>{article.category} · {article.time}</p><h3>{article.title}</h3><span className="read-link">Read article <b aria-hidden="true">→</b></span></div>
               </a>
             </article>

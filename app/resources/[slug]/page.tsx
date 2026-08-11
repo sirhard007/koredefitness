@@ -10,7 +10,7 @@ const resources = {
     time: "6 min read",
     title: "How to build a Nigerian plate that supports your goals",
     intro: "Healthy eating does not require abandoning familiar Nigerian food. The goal is to build a plate that gives your body enough protein, energy, fibre and variety in portions that suit your activity level.",
-    image: "/images/resources/nutrition-balanced-plate.png",
+    image: "/images/resources/nutrition-balanced-plate.webp",
     imageAlt: "A balanced Nigerian meal with protein, vegetables and a measured carbohydrate portion",
     sections: [
       { heading: "Start with protein", body: "Give protein a clear place on the plate. Fish, chicken, eggs, beans, moi moi, lean meat and unsweetened dairy can support recovery and help meals feel satisfying. Choose a portion that fits comfortably in your palm as a practical starting point." },
@@ -25,7 +25,7 @@ const resources = {
     time: "5 min read",
     title: "The beginner’s guide to strength training without fear",
     intro: "Strength training is not reserved for experienced athletes. A good beginner programme teaches movement first, uses manageable resistance and gives the body time to adapt.",
-    image: "/images/resources/beginner-strength-training.png",
+    image: "/images/resources/beginner-strength-training.webp",
     imageAlt: "A beginner learning safe strength-training form with a coach",
     sections: [
       { heading: "Learn the movement before chasing weight", body: "Practise basic patterns such as squatting, pushing, pulling, hinging and carrying. Control each repetition and use a range of motion you can manage without pain. Good technique gives you a foundation for progress." },
@@ -40,7 +40,7 @@ const resources = {
     time: "4 min read",
     title: "Consistency beats intensity: the plan you can actually keep",
     intro: "One exhausting week rarely changes a life. Progress usually comes from ordinary sessions repeated long enough to become part of who you are.",
-    image: "/images/resources/fitness-mindset-consistency.png",
+    image: "/images/resources/fitness-mindset-consistency.webp",
     imageAlt: "An athlete calmly preparing and planning for a consistent workout routine",
     sections: [
       { heading: "Set a minimum you can keep", body: "Decide what counts on a difficult week. It might be two planned workouts, a twenty-minute walk or preparing tomorrow’s training clothes. A realistic minimum protects momentum when life becomes busy." },
@@ -84,7 +84,7 @@ export default async function ResourceArticle({ params }: { params: Promise<{ sl
             <h1>{resource.title}</h1>
             <p>{resource.intro}</p>
           </div>
-          <figure><img src={resource.image} alt={resource.imageAlt} /></figure>
+          <figure><img src={resource.image} alt={resource.imageAlt} decoding="async" /></figure>
         </div>
 
         <div className="resource-content page-shell">
