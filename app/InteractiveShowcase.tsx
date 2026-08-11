@@ -47,22 +47,22 @@ const events: EventItem[] = [
 
 const gallery: GalleryItem[] = [
   {
-    image: "/images/gallery/group-aerobics.jpg",
+    image: "/images/gallery/ai-community-aerobics.webp",
     alt: "Group circuit training session visual",
     label: "GROUP TRAINING",
     caption: "Strength, energy and accountability",
   },
   {
-    image: "/images/gallery/fitness-tour-action.jpg",
+    image: "/images/gallery/ai-personal-coaching.webp",
     alt: "Personal strength coaching session visual",
     label: "PERSONAL COACHING",
     caption: "Technique, safety and steady progress",
   },
   {
-    image: "/images/gallery/outdoor-session.jpg",
-    alt: "Outdoor community aerobics session visual",
-    label: "COMMUNITY AEROBICS",
-    caption: "Moving together, growing stronger",
+    image: "/images/gallery/ai-training-focus.webp",
+    alt: "Focused athlete preparing for a training session",
+    label: "TRAINING MINDSET",
+    caption: "Consistency starts before the first rep",
   },
 ];
 

@@ -168,11 +168,11 @@ export default function Home() {
           <div className="video-gallery">
             <div className="video-intro"><p className="eyebrow"><span /> Video gallery</p><h3>Fitness in motion</h3><p>Short motion previews now show the energy of a session. Replace them with KoredeFitness footage at final handover.</p></div>
             <figure className="video-card">
-              <TrainingVideo src="/images/gallery/circuit-motion.webm" poster="/images/gallery/group-aerobics.jpg" label="Looping group circuit training preview" />
+              <TrainingVideo src="/images/gallery/circuit-motion.webm" poster="/images/gallery/ai-personal-coaching.webp" label="Looping group circuit training preview" />
               <figcaption><span className="live-dot" /> <b>GYM CIRCUIT</b><small>Train with purpose</small></figcaption>
             </figure>
             <figure className="video-card">
-              <TrainingVideo src="/images/gallery/aerobics-motion.webm" poster="/images/gallery/outdoor-session.jpg" label="Looping outdoor aerobics preview" />
+              <TrainingVideo src="/images/gallery/aerobics-motion.webm" poster="/images/gallery/ai-community-aerobics.webp" label="Looping outdoor aerobics preview" />
               <figcaption><span className="live-dot" /> <b>OUTDOOR ENERGY</b><small>Move with the community</small></figcaption>
             </figure>
           </div>
