@@ -20,24 +20,24 @@ type GalleryItem = {
 
 const events: EventItem[] = [
   {
-    image: "/images/events/weekly-aerobics.jpg",
-    alt: "KoredeFitness Ilorin Weekly Aerobics Show poster",
+    image: "/images/gallery/male-community-grass.webp",
+    alt: "All-male outdoor aerobics session on grass in varied sportswear",
     category: "COMMUNITY FITNESS",
     title: "Weekly Aerobics",
-    summary: "Inclusive outdoor movement for men and women across age groups.",
+    summary: "Energetic outdoor movement designed for varied fitness levels.",
     availability: "Venue announced for each session",
   },
   {
-    image: "/images/events/ilorin-fitness-festival.jpg",
-    alt: "Ilorin Fitness Festival 5.0 poster",
+    image: "/images/events/male-festival-grass.webp",
+    alt: "All-male outdoor fitness festival session on grass in varied sportswear",
     category: "FLAGSHIP EXPERIENCE",
     title: "Ilorin Fitness Festival",
     summary: "A major gathering for exercise, connection, fun and whole-person wellness.",
     availability: "Date and venue announced per edition",
   },
   {
-    image: "/images/events/fitness-tour.jpg",
-    alt: "Exercise is Medicine Fitness Tour 2026 poster",
+    image: "/images/events/male-corporate-grass.webp",
+    alt: "All-male corporate wellness fitness session on grass in varied sportswear",
     category: "TOURS & FEATURES",
     title: "Fitness on the Move",
     summary: "Programmes for institutions, ministries, workplaces, public spaces and partner events.",
@@ -47,20 +47,20 @@ const events: EventItem[] = [
 
 const gallery: GalleryItem[] = [
   {
-    image: "/images/gallery/ai-community-aerobics.webp",
-    alt: "Group circuit training session visual",
+    image: "/images/gallery/male-community-grass.webp",
+    alt: "All-male group circuit training session on grass in varied sportswear",
     label: "GROUP TRAINING",
     caption: "Strength, energy and accountability",
   },
   {
-    image: "/images/gallery/ai-personal-coaching.webp",
-    alt: "Personal strength coaching session visual",
+    image: "/images/gallery/male-personal-coaching.webp",
+    alt: "Male personal strength coaching session visual",
     label: "PERSONAL COACHING",
     caption: "Technique, safety and steady progress",
   },
   {
-    image: "/images/gallery/ai-training-focus.webp",
-    alt: "Focused athlete preparing for a training session",
+    image: "/images/gallery/male-training-focus.webp",
+    alt: "Focused male athlete preparing for a training session",
     label: "TRAINING MINDSET",
     caption: "Consistency starts before the first rep",
   },

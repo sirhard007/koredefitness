@@ -25,8 +25,8 @@ const resources = {
     time: "5 min read",
     title: "The beginner’s guide to strength training without fear",
     intro: "Strength training is not reserved for experienced athletes. A good beginner programme teaches movement first, uses manageable resistance and gives the body time to adapt.",
-    image: "/images/resources/beginner-strength-training.webp",
-    imageAlt: "A beginner learning safe strength-training form with a coach",
+    image: "/images/gallery/male-personal-coaching.webp",
+    imageAlt: "A male beginner learning safe strength-training form with a male coach",
     sections: [
       { heading: "Learn the movement before chasing weight", body: "Practise basic patterns such as squatting, pushing, pulling, hinging and carrying. Control each repetition and use a range of motion you can manage without pain. Good technique gives you a foundation for progress." },
       { heading: "Begin with two or three sessions", body: "Two or three full-body sessions each week are enough for many beginners. Leave recovery time between harder sessions and keep the plan simple enough to follow consistently." },
@@ -40,8 +40,8 @@ const resources = {
     time: "4 min read",
     title: "Consistency beats intensity: the plan you can actually keep",
     intro: "One exhausting week rarely changes a life. Progress usually comes from ordinary sessions repeated long enough to become part of who you are.",
-    image: "/images/resources/fitness-mindset-consistency.webp",
-    imageAlt: "An athlete calmly preparing and planning for a consistent workout routine",
+    image: "/images/gallery/male-training-focus.webp",
+    imageAlt: "A male athlete calmly preparing for a consistent workout routine",
     sections: [
       { heading: "Set a minimum you can keep", body: "Decide what counts on a difficult week. It might be two planned workouts, a twenty-minute walk or preparing tomorrow’s training clothes. A realistic minimum protects momentum when life becomes busy." },
       { heading: "Attach training to a routine", body: "Choose a repeatable cue: after work, after school drop-off or at a fixed weekend time. Reducing the number of daily decisions makes action easier." },

@@ -51,7 +51,7 @@ npm test
 
 ## Before final business launch
 
-Replace temporary AI-generated training media with approved KoredeFitness photography and videos, then confirm programme prices, gym address, opening hours, Coach Korede's verified biography, certifications, and social-media links.
+Replace generated training media with approved KoredeFitness photography when available, then confirm the gym address, opening hours, Coach Korede's verified biography, certifications, and social-media links.
 
 ## Contact used in the website
 

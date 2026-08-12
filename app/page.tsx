@@ -6,36 +6,30 @@ const whatsappBase = "https://wa.me/2348069724058";
 
 const plans = [
   {
-    tag: "START STRONG",
-    name: "Foundation",
-    price: "₦25,000",
-    period: "/ 4 weeks",
-    description: "A guided reset for beginners ready to build consistency and confidence.",
-    features: ["3 workouts weekly", "Simple Nigerian meal guide", "Weekly progress check-in"],
+    tag: "ONE-TO-ONE",
+    name: "Personal Training",
+    description: "Focused coaching built around your current ability, routine and fitness goals.",
+    features: ["Individual fitness assessment", "Personalised training guidance", "Progress and technique support"],
   },
   {
-    tag: "MOST POPULAR",
-    name: "Total Transformation",
-    price: "₦45,000",
-    period: "/ 8 weeks",
-    description: "Personalised training and nutrition support built around your real life.",
-    features: ["Custom training plan", "Personalised nutrition guide", "Direct coach accountability"],
+    tag: "TRAIN TOGETHER",
+    name: "Group Fitness",
+    description: "Coach-led sessions that combine purposeful movement, energy and community.",
+    features: ["Structured group workouts", "Supportive training environment", "Sessions for varied fitness levels"],
     featured: true,
   },
   {
-    tag: "TRAIN IN PERSON",
-    name: "1-on-1 Coaching",
-    price: "Let’s talk",
-    period: "",
-    description: "Focused gym sessions, expert technique coaching and measurable progress.",
-    features: ["Private coaching sessions", "Body composition tracking", "Priority support"],
+    tag: "TRAIN ANYWHERE",
+    name: "Online Coaching",
+    description: "Practical remote coaching for people who want structure wherever they train.",
+    features: ["Guided workout planning", "Regular accountability check-ins", "Practical fitness support"],
   },
 ];
 
 const articles = [
   { category: "NUTRITION", title: "How to build a Nigerian plate that supports your goals", time: "6 min read", number: "01", slug: "build-a-balanced-nigerian-plate", image: "/images/resources/nutrition-balanced-plate.webp" },
-  { category: "TRAINING", title: "The beginner’s guide to strength training without fear", time: "5 min read", number: "02", slug: "beginners-guide-to-strength-training", image: "/images/resources/beginner-strength-training.webp" },
-  { category: "MINDSET", title: "Consistency beats intensity: the plan you can actually keep", time: "4 min read", number: "03", slug: "consistency-beats-intensity", image: "/images/resources/fitness-mindset-consistency.webp" },
+  { category: "TRAINING", title: "The beginner’s guide to strength training without fear", time: "5 min read", number: "02", slug: "beginners-guide-to-strength-training", image: "/images/gallery/male-personal-coaching.webp" },
+  { category: "MINDSET", title: "Consistency beats intensity: the plan you can actually keep", time: "4 min read", number: "03", slug: "consistency-beats-intensity", image: "/images/gallery/male-training-focus.webp" },
 ];
 
 export default function Home() {
@@ -91,7 +85,7 @@ export default function Home() {
             <p className="eyebrow dark"><span /> Choose your path</p>
             <h2>Built for real people.<br /><em>Designed for real results.</em></h2>
           </div>
-          <p>Whether you’re starting fresh, chasing a breakthrough or ready for dedicated coaching, there is a clear next step for you.</p>
+          <p>Choose from flexible training options designed to support different goals, experience levels and routines.</p>
         </div>
         <div className="plan-grid">
           {plans.map((plan) => (
@@ -99,17 +93,15 @@ export default function Home() {
               <p className="plan-tag">{plan.tag}</p>
               <h3>{plan.name}</h3>
               <p className="plan-description">{plan.description}</p>
-              <div className="price"><strong>{plan.price}</strong> <span>{plan.period}</span></div>
               <ul>
                 {plan.features.map((feature) => <li key={feature}><span>✓</span>{feature}</li>)}
               </ul>
               <a className={plan.featured ? "button" : "outline-button"} href={`${whatsappBase}?text=${encodeURIComponent(`Hello KoredeFitness, I am interested in the ${plan.name} programme.`)}`} target="_blank" rel="noreferrer">
-                Choose {plan.name} <span aria-hidden="true">→</span>
+                Enquire about {plan.name} <span aria-hidden="true">→</span>
               </a>
             </article>
           ))}
         </div>
-        <p className="payment-note">Programme buttons currently open a WhatsApp enquiry. Connect Paystack or Flutterwave when the merchant account is ready.</p>
       </section>
 
       <section className="coach section" id="coach">
@@ -166,17 +158,17 @@ export default function Home() {
           </div>
           <GalleryViewer />
           <div className="video-gallery">
-            <div className="video-intro"><p className="eyebrow"><span /> Video gallery</p><h3>Fitness in motion</h3><p>Short motion previews now show the energy of a session. Replace them with KoredeFitness footage at final handover.</p></div>
+            <div className="video-intro"><p className="eyebrow"><span /> Training highlights</p><h3>Fitness in action</h3><p>Purposeful coaching, focused effort and community energy in every session.</p></div>
             <figure className="video-card">
-              <TrainingVideo src="/images/gallery/circuit-motion.webm" poster="/images/gallery/ai-personal-coaching.webp" label="Looping group circuit training preview" />
-              <figcaption><span className="live-dot" /> <b>GYM CIRCUIT</b><small>Train with purpose</small></figcaption>
+              <TrainingVideo src="/images/gallery/personal-training-motion.webm" poster="/images/gallery/male-personal-coaching.webp" label="Short AI motion clip of male personal training" />
+              <figcaption><span className="live-dot" /> <b>PERSONAL COACHING</b><small>Train with purpose</small></figcaption>
             </figure>
             <figure className="video-card">
-              <TrainingVideo src="/images/gallery/aerobics-motion.webm" poster="/images/gallery/ai-community-aerobics.webp" label="Looping outdoor aerobics preview" />
+              <TrainingVideo src="/images/gallery/outdoor-training-motion.webm" poster="/images/gallery/male-community-grass.webp" label="Short AI motion clip of all-male outdoor training on grass" />
               <figcaption><span className="live-dot" /> <b>OUTDOOR ENERGY</b><small>Move with the community</small></figcaption>
             </figure>
           </div>
-          <p className="gallery-disclaimer">Temporary AI-generated training visuals are used for presentation. Replace them with approved KoredeFitness photography and video before the public campaign launch.</p>
+          <p className="gallery-disclaimer">Generated training visuals are used for presentation and can be replaced with approved KoredeFitness photography at final handover.</p>
         </div>
       </section>
 

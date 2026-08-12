@@ -21,7 +21,7 @@ export default function TrainingVideo({ src, poster, label }: TrainingVideoProps
   }, []);
 
   return (
-    <video ref={videoRef} autoPlay muted loop playsInline preload="metadata" poster={poster} aria-label={label}>
+    <video ref={videoRef} autoPlay muted loop playsInline controls controlsList="nodownload noplaybackrate" preload="metadata" poster={poster} aria-label={label}>
       <source src={src} type="video/webm" />
     </video>
   );

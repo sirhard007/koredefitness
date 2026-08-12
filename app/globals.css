@@ -80,17 +80,13 @@ h1 em, h2 em { color: var(--lime); font-style: normal; }
 .plan-card h3 { margin: 18px 0 13px; font-size: 28px; letter-spacing: -.045em; }
 .plan-description { min-height: 70px; color: #77786f; font-size: 13px; line-height: 1.7; }
 .featured .plan-description { color: rgba(255,255,255,.57); }
-.price { padding: 22px 0; margin: 8px 0 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.featured .price { border-color: rgba(255,255,255,.14); }
-.price strong { font-size: 29px; letter-spacing: -.05em; }
-.price span { font-size: 11px; color: #7b7c74; }
 .plan-card ul { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 15px; color: #5f6058; font-size: 12px; }
 .featured ul { color: rgba(255,255,255,.66); }
 .plan-card li { display: flex; gap: 12px; align-items: center; }
 .plan-card li span { color: #088fc4; font-weight: 900; }
 .plan-card .button, .plan-card .outline-button { margin-top: auto; }
 .outline-button { min-height: 52px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; border: 1px solid #babbb2; font-size: 11px; font-weight: 760; text-transform: uppercase; letter-spacing: .08em; }
-.payment-note, .placeholder-disclaimer { margin: 23px 0 0; color: #8b8c84; text-align: center; font-size: 10px; }
+.placeholder-disclaimer { margin: 23px 0 0; color: #8b8c84; text-align: center; font-size: 10px; }
 
 .coach { background: #071c3b; color: white; overflow: hidden; }
 .coach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9vw; align-items: center; }
