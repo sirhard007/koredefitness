@@ -43,7 +43,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="KoredeFitness home">
-          <span className="brand-mark">K<span>/</span></span>
+          <span className="brand-mark"><img src="/images/brand-logo.webp" alt="" /></span>
           <span>KOREDE<span>FITNESS</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -115,7 +115,7 @@ export default function Home() {
       <section className="coach section" id="coach">
         <div className="page-shell coach-grid">
           <div className="coach-visual">
-            <div className="coach-photo coach-real"><img src="/images/gallery/coach-korede-sharp.jpg" alt="Ambassador Coach Korede" loading="lazy" decoding="async" /><small>AMB. COACH KOREDE</small></div>
+            <div className="coach-photo coach-real"><img src="/images/gallery/coach-korede-profile.jpg" alt="Ambassador Coach Korede" loading="eager" decoding="async" /><small>AMB. COACH KOREDE</small></div>
             <div className="experience-badge"><strong>EIM</strong><span>EXERCISE IS<br />MEDICINE</span></div>
           </div>
           <div className="coach-copy">
@@ -248,7 +248,7 @@ export default function Home() {
 
       <footer>
         <div className="page-shell footer-main">
-          <div><a className="brand footer-brand" href="#top"><span className="brand-mark">K<span>/</span></span><span>KOREDE<span>FITNESS</span></span></a><p>Build strength. Own your life.</p></div>
+          <div><a className="brand footer-brand" href="#top"><span className="brand-mark"><img src="/images/brand-logo.webp" alt="" /></span><span>KOREDE<span>FITNESS</span></span></a><p>Build strength. Own your life.</p></div>
           <div><b>EXPLORE</b><a href="#programmes">Programmes</a><a href="#coach">Meet Korede</a><a href="#events">Events</a><a href="#gallery">Gallery</a></div>
           <div><b>CONNECT</b><a href="#resources">Fitness guides</a><a href={`${whatsappBase}`} target="_blank" rel="noreferrer">WhatsApp</a><a href="#top">Instagram</a></div>
           <div><b>HOME BASE</b><p>KoredeFitness Gym<br />Ilorin, Kwara State</p><p>Event venues<br />announced separately</p></div>

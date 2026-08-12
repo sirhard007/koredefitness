@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const links = [
   ["Programmes", "#programmes"],
@@ -20,28 +21,41 @@ export default function MobileNav({ whatsappBase }: { whatsappBase: string }) {
 
   return (
     <div className="mobile-navigation">
-      <button
-        className={`menu-toggle ${open ? "is-open" : ""}`}
+      {!open && <button
+        className="menu-toggle"
         type="button"
-        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+        aria-label="Open navigation menu"
         aria-expanded={open}
         aria-controls="mobile-menu"
-        onClick={() => setOpen((current) => !current)}
+        onClick={() => setOpen(true)}
       >
         <span /><span /><span />
-      </button>
-      <div className={`mobile-menu ${open ? "is-open" : ""}`} id="mobile-menu" aria-hidden={!open}>
-        <nav aria-label="Mobile navigation">
-          {links.map(([label, href], index) => (
-            <a href={href} key={href} onClick={() => setOpen(false)}>
-              <small>{String(index + 1).padStart(2, "0")}</small>{label}<span>→</span>
-            </a>
-          ))}
-        </nav>
-        <a className="button mobile-booking" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20would%20like%20to%20book%20a%20consultation.`} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
-          Book a consultation <span aria-hidden="true">↗</span>
-        </a>
-      </div>
+      </button>}
+      {open && createPortal(
+        <div className="mobile-menu is-open" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+          <button
+            className="menu-toggle menu-close"
+            type="button"
+            aria-label="Close navigation menu"
+            aria-expanded="true"
+            aria-controls="mobile-menu"
+            onClick={() => setOpen(false)}
+          >
+            <span /><span /><span />
+          </button>
+          <nav aria-label="Mobile navigation">
+            {links.map(([label, href], index) => (
+              <a href={href} key={href} onClick={() => setOpen(false)}>
+                <small>{String(index + 1).padStart(2, "0")}</small>{label}<span>→</span>
+              </a>
+            ))}
+          </nav>
+          <a className="button mobile-booking" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20would%20like%20to%20book%20a%20consultation.`} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
+            Book a consultation <span aria-hidden="true">↗</span>
+          </a>
+        </div>,
+        document.body,
+      )}
     </div>
   );
 }

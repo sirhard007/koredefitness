@@ -72,7 +72,7 @@ export default async function ResourceArticle({ params }: { params: Promise<{ sl
   return (
     <main className="resource-page">
       <header className="site-header article-header">
-        <Link className="brand" href="/" aria-label="KoredeFitness home"><span className="brand-mark">K<span>/</span></span><span>KOREDE<span>FITNESS</span></span></Link>
+        <Link className="brand" href="/" aria-label="KoredeFitness home"><span className="brand-mark"><img src="/images/brand-logo.webp" alt="" /></span><span>KOREDE<span>FITNESS</span></span></Link>
         <Link className="article-back" href="/#resources">← Back to fitness guides</Link>
         <a className="button button-small" href={`${whatsappBase}?text=${encodeURIComponent("Hello KoredeFitness, I would like help choosing a fitness programme.")}`} target="_blank" rel="noreferrer">Talk to a coach <span aria-hidden="true">↗</span></a>
       </header>
