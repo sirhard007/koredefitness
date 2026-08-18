@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const links = [
-  ["Programmes", "#programmes"],
-  ["Meet Korede", "#coach"],
-  ["Events", "#events"],
-  ["Gallery", "#gallery"],
-  ["Fitness guides", "#resources"],
+  ["Home", "/"],
+  ["Profile", "/profile"],
+  ["Services", "/services"],
+  ["Events", "/events"],
+  ["Gallery", "/#gallery"],
 ];
 
 export default function MobileNav({ whatsappBase }: { whatsappBase: string }) {

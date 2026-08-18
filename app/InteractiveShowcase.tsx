@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 type EventItem = {
   image: string;
   alt: string;
+  href: string;
   category: string;
   title: string;
   summary: string;
@@ -20,32 +21,59 @@ type GalleryItem = {
 
 const events: EventItem[] = [
   {
-    image: "/images/events/ilorin-weekly-aerobics-show.jpg",
-    alt: "Poster for the Ilorin Weekly Aerobics Show led by Coach Korede",
-    category: "WEEKLY COMMUNITY FITNESS",
-    title: "Ilorin Weekly Aerobics Show",
-    summary: "A healthy-lifestyle session combining fitness, fun and wellness for young people, adults and the elderly.",
-    availability: "Every Saturday · 7:00–9:00 AM · Maracana Stadium, Adewole · ₦2,000 weekly",
-  },
-  {
-    image: "/images/events/ilorin-fitness-festival-5.jpg",
-    alt: "Poster for Ilorin Fitness Festival 5.0 convened by Coach Korede",
-    category: "FLAGSHIP WELLNESS FESTIVAL",
-    title: "Ilorin Fitness Festival 5.0",
-    summary: "Ilorin moves through exercise, connection and shared wellness at KoredeFitness’s flagship community festival.",
-    availability: "22 November 2025 · 7:00 AM · Kwara State College of Education Indoor Sports Hall",
-  },
-  {
     image: "/images/events/exercise-is-medicine-10-tour.jpg",
     alt: "Poster for the Exercise Is Medicine at 10 Fitness Tour 2026",
-    category: "2026 FITNESS TOUR",
+    href: "/events",
+    category: "UPCOMING EVENT · HAPPENING SOON",
     title: "Exercise Is Medicine @ 10",
-    summary: "Celebrating a decade of impactful healthy living with fitness visits to institutions, ministries, workplaces and public spaces.",
-    availability: "2026 tour · Sponsorship and partnership opportunities available",
+    summary: "Celebrating a decade of impactful healthy living through a 10-location fitness tour, public lecture, community rallies, sporting activities and a spectacular grand finale.",
+    availability: "September 16 – October 17, 2026 · Kwara State, Nigeria",
   },
 ];
 
 const gallery: GalleryItem[] = [
+  {
+    image: "/images/gallery/coach-korede-mobility-01.jpg",
+    alt: "Coach Korede demonstrating a seated mobility stretch",
+    label: "MOBILITY TRAINING",
+    caption: "Controlled movement and flexibility",
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-02.jpg",
+    alt: "Coach Korede seated during a guided wellness session",
+    label: "WELLNESS IN ACTION",
+    caption: "Breathing, balance and body awareness",
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-03.jpg",
+    alt: "Coach Korede demonstrating a wide lateral fitness stance",
+    label: "FUNCTIONAL FITNESS",
+    caption: "Movement built for everyday strength",
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-04.jpg",
+    alt: "Coach Korede leading a lower-body mobility exercise",
+    label: "ACTIVE MOBILITY",
+    caption: "Strong foundations and confident movement",
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-05.jpg",
+    alt: "Coach Korede demonstrating an energetic training stance",
+    label: "COACH-LED TRAINING",
+    caption: "Clear guidance in every session",
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-06.jpg",
+    alt: "Coach Korede demonstrating a fitness movement indoors",
+    label: "MOVE WITH PURPOSE",
+    caption: "Consistency, control and progress",
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-07.jpg",
+    alt: "Coach Korede in an Exercise Is Medicine training session",
+    label: "EXERCISE IS MEDICINE",
+    caption: "Healthy living through purposeful movement",
+  },
   {
     image: "/images/gallery/male-community-grass.webp",
     alt: "All-male group circuit training session on grass in varied sportswear",
@@ -85,48 +113,27 @@ function useModalControls(open: boolean, onClose: () => void, onPrevious?: () =>
 }
 
 export function EventCards() {
-  const [active, setActive] = useState<number | null>(null);
-  const close = () => setActive(null);
-  useModalControls(active !== null, close);
-
   return (
-    <>
-      <div className="event-grid">
-        {events.map((event, index) => (
-          <article className="event-card event-card-clickable" key={event.title}>
-            <button type="button" className="event-card-button" onClick={() => setActive(index)} aria-label={`View full details for ${event.title}`}>
+    <div className="event-grid">
+        {events.map((event) => (
+          <article className="event-card event-card-featured event-card-clickable" key={event.title}>
+            <a className="event-card-button" href={event.href} aria-label={`Open the ${event.title} event page`}>
               <span className="event-image-wrap">
                 <img src={event.image} alt={event.alt} loading="lazy" decoding="async" />
-                <span className="event-view-cue">View full poster <b aria-hidden="true">↗</b></span>
+                <span className="event-view-cue">Upcoming · Happening soon</span>
               </span>
               <span className="event-card-copy">
                 <span className="event-category">{event.category}</span>
                 <strong>{event.title}</strong>
                 <span className="event-summary">{event.summary}</span>
+                <span className="event-movement">10 Years <b>•</b> 10 Locations <b>•</b> One Movement</span>
                 <b className="event-availability">{event.availability}</b>
-                <span className="event-read">View full details <b aria-hidden="true">→</b></span>
+                <span className="event-read">View event details &amp; tour schedule <b aria-hidden="true">→</b></span>
               </span>
-            </button>
+            </a>
           </article>
         ))}
       </div>
-
-      {active !== null && (
-        <div className="media-modal event-modal" role="dialog" aria-modal="true" aria-label={`${events[active].title} details`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
-          <button className="modal-close" type="button" onClick={close} aria-label="Close event details">×</button>
-          <div className="event-modal-panel">
-            <div className="event-modal-image"><img src={events[active].image} alt={events[active].alt} /></div>
-            <div className="event-modal-copy">
-              <p>{events[active].category}</p>
-              <h3>{events[active].title}</h3>
-              <span>{events[active].summary}</span>
-              <b>{events[active].availability}</b>
-              <small>Use the close button or press Escape to return to the website.</small>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
   );
 }
 
