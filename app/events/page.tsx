@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const upcomingEvent = {
-  status: "UPCOMING EVENT · HAPPENING SOON",
+  status: "EVENT 01 · UPCOMING · HAPPENING SOON",
   title: "Exercise Is Medicine @10",
   summary: "Celebrate a decade of impactful healthy living through a 10-location fitness tour, public lecture, community rallies, sporting activities and a grand finale.",
   date: "September 16 – October 17, 2026",
@@ -83,7 +83,7 @@ export default function EventsPage() {
               <Link className="article-card-link" href={event.href} aria-label={`View ${event.title}`}>
                 <div className="article-art">
                   <img src={event.image} alt={event.imageAlt} loading="lazy" decoding="async" />
-                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span>{String(index + 2).padStart(2, "0")}</span>
                   <small>PAST EVENT</small>
                 </div>
                 <div className="article-body">

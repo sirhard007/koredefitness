@@ -14,7 +14,7 @@ export default function SiteHeader() {
         <Link href="/">Home</Link>
         <Link href="/profile">Profile</Link>
         <Link href="/services">Services</Link>
-        <Link href="/event/eim-at-10">Event</Link>
+        <Link href="/events">Events</Link>
         <Link href="/blog">Blog</Link>
         <Link href="/#gallery">Gallery</Link>
       </nav>

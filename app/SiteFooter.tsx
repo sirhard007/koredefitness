@@ -7,7 +7,7 @@ export default function SiteFooter() {
       <footer>
         <div className="page-shell footer-main">
           <div><Link className="brand footer-brand" href="/"><span className="brand-mark"><img src="/images/brand-logo.webp" alt="" /></span><span>KOREDE<span>FITNESS</span></span></Link><p>Train. Transform. Thrive.</p></div>
-          <div><b>EXPLORE</b><Link href="/profile">Coach profile</Link><Link href="/services">Services</Link><Link href="/event/eim-at-10">Upcoming event</Link><Link href="/#gallery">Gallery</Link></div>
+          <div><b>EXPLORE</b><Link href="/profile">Coach profile</Link><Link href="/services">Services</Link><Link href="/events">Events</Link><Link href="/#gallery">Gallery</Link></div>
           <div><b>CONNECT</b><Link href="/blog">Fitness blog</Link><a href={whatsappBase} target="_blank" rel="noreferrer">WhatsApp</a></div>
           <div><b>AVAILABLE</b><p>Ilorin, Kwara State</p><p>Across Nigeria<br />and internationally</p></div>
         </div>
