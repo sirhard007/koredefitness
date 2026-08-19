@@ -14,7 +14,8 @@ export default function SiteHeader() {
         <Link href="/">Home</Link>
         <Link href="/profile">Profile</Link>
         <Link href="/services">Services</Link>
-        <Link href="/events">Events</Link>
+        <Link href="/event/eim-at-10">Event</Link>
+        <Link href="/blog">Blog</Link>
         <Link href="/#gallery">Gallery</Link>
       </nav>
       <a className="button button-small" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20would%20like%20to%20book%20a%20consultation.`} target="_blank" rel="noreferrer">

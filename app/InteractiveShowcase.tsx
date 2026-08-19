@@ -23,7 +23,7 @@ const events: EventItem[] = [
   {
     image: "/images/events/exercise-is-medicine-10-tour.jpg",
     alt: "Poster for the Exercise Is Medicine at 10 Fitness Tour 2026",
-    href: "/events",
+    href: "/event/eim-at-10",
     category: "UPCOMING EVENT · HAPPENING SOON",
     title: "Exercise Is Medicine @ 10",
     summary: "Celebrating a decade of impactful healthy living through a 10-location fitness tour, public lecture, community rallies, sporting activities and a spectacular grand finale.",

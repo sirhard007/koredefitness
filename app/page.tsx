@@ -152,18 +152,19 @@ export default function Home() {
             <p className="eyebrow dark"><span /> Fitness guides</p>
             <h2>Simple guidance.<br /><em>Made useful.</em></h2>
           </div>
-          <p className="guide-intro">No busy blog. Just practical guides for eating well, training safely and building a mindset that lasts.</p>
+          <p className="guide-intro">Practical articles on eating well, training safely and building habits that last.</p>
         </div>
         <div className="article-grid" id="articles">
           {articles.map((article) => (
             <article className="article-card" key={article.number}>
-              <a className="article-card-link" href={`/resources/${article.slug}`} aria-label={`Read ${article.title}`}>
+              <a className="article-card-link" href={`/blog/${article.slug}`} aria-label={`Read ${article.title}`}>
                 <div className="article-art"><img src={article.image} alt="" loading="lazy" decoding="async" /><span>{article.number}</span><small>{article.category}</small></div>
                 <div className="article-body"><p>{article.category} · {article.time}</p><h3>{article.title}</h3><span className="read-link">Read article <b aria-hidden="true">→</b></span></div>
               </a>
             </article>
           ))}
         </div>
+        <div className="section-page-link"><a className="text-link" href="/blog">Visit the fitness blog <span>→</span></a></div>
       </section>
 
       <section className="testimonial section">
