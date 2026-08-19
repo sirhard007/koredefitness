@@ -37,8 +37,10 @@ export default function EventsPage() {
             <p className="eyebrow"><span /> 10 years • 10 locations • One movement</p>
             <h1>Exercise Is Medicine<br /><em>@10 Anniversary Tour.</em></h1>
             <p>Celebrating a decade of impactful healthy living across Kwara State and its environs.</p>
-            <div className="event-date-banner"><strong>September 16 – October 17, 2026</strong><span>Kwara State, Nigeria</span></div>
-            <a className="button event-register-button" href={registrationUrl} target="_blank" rel="noreferrer">Sign up for the event <span>↗</span></a>
+            <div className="event-hero-actions">
+              <div className="event-date-banner"><strong>September 16 – October 17, 2026</strong><span>Kwara State, Nigeria</span></div>
+              <a className="button event-register-button" href={registrationUrl} target="_blank" rel="noreferrer">Sign up for the event <span>↗</span></a>
+            </div>
           </div>
           <figure><img src="/images/events/exercise-is-medicine-10-tour.jpg" alt="Exercise Is Medicine at 10 Anniversary Fitness Tour poster" /></figure>
         </div>
@@ -71,7 +73,7 @@ export default function EventsPage() {
       </section>
 
       <section className="event-join">
-        <div className="page-shell"><p className="eyebrow"><span /> Join the celebration</p><h2>10 years. 10 locations.<br /><em>One movement.</em></h2><p>Be part of this historic 10th-anniversary celebration.</p><a className="button" href={registrationUrl} target="_blank" rel="noreferrer">Sign up on EventPorte <span>↗</span></a></div>
+        <div className="page-shell"><p className="eyebrow"><span /> Join the celebration</p><h2>10 years. 10 locations.<br /><em>One movement.</em></h2><p>Be part of this historic 10th-anniversary celebration.</p><a className="button" href={registrationUrl} target="_blank" rel="noreferrer">Sign up for event <span>↗</span></a></div>
       </section>
       <SiteFooter />
     </main>
