@@ -272,6 +272,7 @@ footer { background:#041225; color:white; padding:70px 0 25px; }
 .floating-whatsapp svg { width:32px; height:32px; display:block; }
 
 .section-page-link { margin-top:34px; display:flex; justify-content:flex-end; color:#075f87; }
+.event-page-link { margin-top:26px; }
 .inner-page { min-height:100vh; }
 .inner-hero { padding:176px 0 92px; background:#071c3b; color:white; overflow:hidden; }
 .inner-hero h1 { margin:0; font-size:clamp(54px,7vw,96px); line-height:.92; letter-spacing:-.075em; text-transform:uppercase; }
@@ -369,6 +370,14 @@ footer { background:#041225; color:white; padding:70px 0 25px; }
 .blog-featured-copy > span { color:rgba(255,255,255,.65); font-size:14px; line-height:1.8; }
 .blog-featured-copy > b { margin-top:36px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,.35); font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
 .blog-featured-copy i { margin-left:18px; color:var(--lime); font-style:normal; font-size:17px; }
+.event-index-featured .blog-featured-image { background:#dcecf1; }
+.event-index-featured .blog-featured-image img { object-fit:contain; }
+.event-history-intro { margin-top:90px; }
+.event-history-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.past-event-card .article-art { height:360px; background:#dcecf1; }
+.past-event-card .article-art img { object-fit:contain; }
+.past-event-card .article-body h3 { min-height:0; font-size:24px; }
+.past-event-card .event-summary { display:block; min-height:58px; margin-bottom:24px; color:var(--muted); font-size:12px; line-height:1.7; }
 
 @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
 @keyframes heroBreathe { from { transform:scale(1.01); } to { transform:scale(1.065); } }
@@ -426,6 +435,7 @@ footer { background:#041225; color:white; padding:70px 0 25px; }
   .coach-visual { min-height:500px; }
   .experience-badge { right:20px; }
   .article-grid { grid-template-columns:1fr 1fr; }
+  .event-history-grid { grid-template-columns:1fr 1fr; }
   .blog-featured-card > a { grid-template-columns:1fr; }
   .blog-featured-image { min-height:460px; }
   .gallery-item { grid-column:span 6; }
@@ -464,6 +474,7 @@ footer { background:#041225; color:white; padding:70px 0 25px; }
   .experience-badge { width:115px; height:115px; right:14px; bottom:25px; }
   .experience-badge strong { font-size:35px; }
   .article-grid { grid-template-columns:1fr; }
+  .event-history-grid { grid-template-columns:1fr; }
   .blog-list-intro { align-items:flex-start; flex-direction:column; gap:16px; }
   .blog-featured-card > a { min-height:0; }
   .blog-featured-image { min-height:360px; }

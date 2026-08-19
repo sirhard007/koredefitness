@@ -126,6 +126,7 @@ export default function Home() {
           <p>Join Exercise Is Medicine @10 for a month-long anniversary fitness tour across Kwara State, culminating in a grand finale in Ilorin.</p>
         </div>
         <EventCards />
+        <div className="section-page-link event-page-link"><a className="text-link" href="/events">View all events <span>→</span></a></div>
         <div className="event-action">
           <p>Planning a wellness event or looking for a fitness partner?</p>
           <a className="button" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20would%20like%20to%20discuss%20an%20event%2C%20partnership%20or%20guest%20fitness%20appearance.`} target="_blank" rel="noreferrer">Invite KoredeFitness <span>↗</span></a>
