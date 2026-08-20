@@ -19,6 +19,18 @@ const upcomingEvent = {
   imageAlt: "Exercise Is Medicine at 10 Anniversary Fitness Tour poster",
 };
 
+const moreUpcomingEvents = [
+  {
+    title: "Tabata Fit Fest 7.0 — Ibadan Edition",
+    summary: "Coach Korede joins the trainer line-up for a free high-energy community fitness experience themed Move More, Live Well.",
+    date: "September 12, 2026 · 7:00 AM–12:00 PM",
+    location: "International Conference Centre, Ibadan",
+    href: "/event/tabata-fit-fest-7-ibadan",
+    image: "/images/events/tabata-fit-fest-7-ibadan.jpg",
+    imageAlt: "Tabata Fit Fest 7.0 Ibadan Edition poster featuring KoredeFitness",
+  },
+];
+
 const pastEvents = [
   {
     title: "Ilorin Fitness Festival 5.0",
@@ -73,6 +85,26 @@ export default function EventsPage() {
             </Link>
         </article>
 
+        <div className="event-history-grid upcoming-event-grid">
+          {moreUpcomingEvents.map((event) => (
+            <article className="article-card past-event-card" key={event.href}>
+              <Link className="article-card-link" href={event.href} aria-label={`View ${event.title}`}>
+                <div className="article-art">
+                  <img src={event.image} alt={event.imageAlt} loading="lazy" decoding="async" />
+                  <span>02</span>
+                  <small>UPCOMING EVENT</small>
+                </div>
+                <div className="article-body">
+                  <p>{event.date} · {event.location}</p>
+                  <h3>{event.title}</h3>
+                  <span className="event-summary">{event.summary}</span>
+                  <span className="read-link">View event details <b aria-hidden="true">→</b></span>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
+
         <div className="blog-list-intro event-history-intro">
           <h2>Past <em>events.</em></h2>
           <p>Explore previous KoredeFitness festivals and community fitness programmes.</p>
@@ -83,7 +115,7 @@ export default function EventsPage() {
               <Link className="article-card-link" href={event.href} aria-label={`View ${event.title}`}>
                 <div className="article-art">
                   <img src={event.image} alt={event.imageAlt} loading="lazy" decoding="async" />
-                  <span>{String(index + 2).padStart(2, "0")}</span>
+                  <span>{String(index + 3).padStart(2, "0")}</span>
                   <small>PAST EVENT</small>
                 </div>
                 <div className="article-body">

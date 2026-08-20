@@ -34,45 +34,81 @@ const events: EventItem[] = [
 
 const gallery: GalleryItem[] = [
   {
+    image: "/images/gallery/stadium-aerobics-session.jpg",
+    alt: "Coach Korede leading a large outdoor aerobics session at a stadium",
+    label: "STADIUM AEROBICS",
+    caption: "A community moving together",
+    home: true,
+  },
+  {
+    image: "/images/gallery/coach-korede-leading-session.jpg",
+    alt: "Coach Korede leading a fitness session with a microphone",
+    label: "COACH-LED SESSION",
+    caption: "Clear instruction and active participation",
+    home: true,
+  },
+  {
+    image: "/images/gallery/olympic-day-team.jpg",
+    alt: "Coach Korede with participants at an Olympic Day event",
+    label: "OLYMPIC DAY",
+    caption: "Sport, partnership and community",
+    home: true,
+  },
+  {
+    image: "/images/gallery/community-courtyard-aerobics-wide.jpg",
+    alt: "A large community aerobics session in an open courtyard",
+    label: "COMMUNITY OUTREACH",
+    caption: "Fitness brought closer to the people",
+    home: true,
+  },
+  {
+    image: "/images/gallery/coach-korede-eim-portrait.jpg",
+    alt: "Coach Korede wearing an Exercise Is Medicine shirt",
+    label: "EXERCISE IS MEDICINE",
+    caption: "A visible commitment to healthy living",
+    home: true,
+  },
+  {
+    image: "/images/gallery/community-stadium-stretch.jpg",
+    alt: "Participants performing side stretches during a stadium fitness session",
+    label: "MASS STRETCHING",
+    caption: "Mobility and movement at scale",
+  },
+  {
+    image: "/images/gallery/stadium-mass-fitness.jpg",
+    alt: "A wide view of participants exercising on a stadium field",
+    label: "MASS FITNESS",
+    caption: "Healthy living across the community",
+  },
+  {
+    image: "/images/gallery/olympic-day-team-wide.jpg",
+    alt: "Coach Korede and fitness stakeholders at an Olympic Day programme",
+    label: "SPORTS PARTNERSHIP",
+    caption: "Working together for active living",
+  },
+  {
+    image: "/images/gallery/coach-korede-community-instruction.jpg",
+    alt: "Coach Korede addressing participants during a community fitness programme",
+    label: "COMMUNITY INSTRUCTION",
+    caption: "Guidance that keeps everyone involved",
+  },
+  {
+    image: "/images/gallery/community-courtyard-stretch.jpg",
+    alt: "Community participants performing forward stretches outdoors",
+    label: "ACTIVE COMMUNITY",
+    caption: "Movement made accessible to everyone",
+  },
+  {
+    image: "/images/gallery/community-courtyard-session.jpg",
+    alt: "Participants gathered for an outdoor community fitness session",
+    label: "FITNESS OUTREACH",
+    caption: "A shared commitment to wellbeing",
+  },
+  {
     image: "/images/gallery/coach-korede-mobility-01.jpg",
     alt: "Coach Korede demonstrating a seated mobility stretch",
     label: "MOBILITY TRAINING",
     caption: "Controlled movement and flexibility",
-    home: true,
-  },
-  {
-    image: "/images/gallery/male-personal-coaching.webp",
-    alt: "Male personal strength coaching session visual",
-    label: "PERSONAL COACHING",
-    caption: "Technique, safety and steady progress",
-    home: true,
-  },
-  {
-    image: "/images/events/male-festival-grass.webp",
-    alt: "A coach leading a large outdoor group fitness session",
-    label: "COMMUNITY FITNESS",
-    caption: "People moving together with purpose",
-    home: true,
-  },
-  {
-    image: "/images/gallery/male-training-focus.webp",
-    alt: "Focused male athlete preparing for a training session",
-    label: "TRAINING MINDSET",
-    caption: "Consistency starts before the first rep",
-    home: true,
-  },
-  {
-    image: "/images/gallery/coach-korede-mobility-05.jpg",
-    alt: "Coach Korede demonstrating an energetic training stance",
-    label: "COACH-LED TRAINING",
-    caption: "Clear guidance in every session",
-    home: true,
-  },
-  {
-    image: "/images/gallery/male-community-grass.webp",
-    alt: "All-male group circuit training session on grass in varied sportswear",
-    label: "GROUP TRAINING",
-    caption: "Strength, energy and accountability",
   },
   {
     image: "/images/gallery/coach-korede-mobility-02.jpg",
@@ -93,6 +129,12 @@ const gallery: GalleryItem[] = [
     caption: "Strong foundations and confident movement",
   },
   {
+    image: "/images/gallery/coach-korede-mobility-05.jpg",
+    alt: "Coach Korede demonstrating an energetic training stance",
+    label: "COACH-LED TRAINING",
+    caption: "Clear guidance in every session",
+  },
+  {
     image: "/images/gallery/coach-korede-mobility-06.jpg",
     alt: "Coach Korede demonstrating a fitness movement indoors",
     label: "MOVE WITH PURPOSE",
@@ -105,6 +147,8 @@ const gallery: GalleryItem[] = [
     caption: "Healthy living through purposeful movement",
   },
 ];
+
+const mixedGalleryOrder = [0, 11, 2, 1, 13, 3, 4, 5, 15, 7, 8, 12, 6, 16, 9, 14, 10, 17];
 
 function useModalControls(open: boolean, onClose: () => void, onPrevious?: () => void, onNext?: () => void) {
   useEffect(() => {
@@ -150,7 +194,7 @@ export function EventCards() {
 }
 
 export function GalleryViewer({ full = false }: { full?: boolean }) {
-  const displayedGallery = full ? gallery : gallery.filter((item) => item.home);
+  const displayedGallery = full ? mixedGalleryOrder.map((index) => gallery[index]) : gallery.filter((item) => item.home);
   const [active, setActive] = useState<number | null>(null);
   const close = () => setActive(null);
   const previous = () => setActive((current) => current === null ? 0 : (current - 1 + displayedGallery.length) % displayedGallery.length);

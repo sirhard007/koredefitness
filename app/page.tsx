@@ -1,6 +1,7 @@
 import { EventCards, GalleryViewer } from "./InteractiveShowcase";
 import SiteHeader, { whatsappBase } from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
+import HomeHeroSlider from "./HomeHeroSlider";
 
 const plans = [
   {
@@ -38,25 +39,7 @@ export default function Home() {
     <main>
       <SiteHeader />
 
-      <section className="hero" id="top">
-        <div className="hero-image" aria-hidden="true" />
-        <div className="hero-overlay" />
-        <div className="hero-content page-shell">
-          <p className="hero-mantra"><span aria-hidden="true">✦</span> Exercise is medicine</p>
-          <h1>Build strength.<br /><em>Own your life.</em></h1>
-          <p className="hero-copy">Training that meets you where you are—and builds the discipline, confidence and body you’re proud to live in.</p>
-          <div className="hero-actions">
-            <a className="button" href="#programmes">Find your programme <span aria-hidden="true">→</span></a>
-            <a className="text-link" href="/profile"><span className="play">▶</span> Meet your coach</a>
-          </div>
-        </div>
-        <div className="hero-proof">
-          <div><strong>1<span>:</span>1</strong><small>personal coaching</small></div>
-          <div><strong>IL<span>R</span></strong><small>home base</small></div>
-          <div><strong>360<span>°</span></strong><small>fitness support</small></div>
-        </div>
-        <a className="scroll-cue" href="#programmes" aria-label="Scroll to programmes">SCROLL <span>↓</span></a>
-      </section>
+      <HomeHeroSlider />
 
       <section className="ticker" aria-label="KoredeFitness values">
         <div className="ticker-track">
@@ -144,7 +127,7 @@ export default function Home() {
           </div>
           <GalleryViewer />
           <div className="section-page-link gallery-page-link"><a className="text-link" href="/gallery">View full gallery <span>→</span></a></div>
-          <p className="gallery-disclaimer">Coach Korede’s supplied training photos are featured alongside supporting presentation visuals.</p>
+          <p className="gallery-disclaimer">All photographs in this gallery were supplied by KoredeFitness.</p>
         </div>
       </section>
 
