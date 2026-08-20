@@ -4,6 +4,15 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
+    type: "coach",
+    eyebrow: "Exercise is medicine",
+    title: <>Build strength.<br /><em>Own your life.</em></>,
+    copy: "Training that meets you where you are—and builds the discipline, confidence and body you are proud to live in.",
+    primary: { label: "Find your programme", href: "#programmes" },
+    secondary: { label: "Meet your coach", href: "/profile" },
+    image: "/images/gallery/hero-male-only.webp",
+  },
+  {
     type: "tabata",
     eyebrow: "Upcoming event · September 12, 2026",
     title: <>Tabata Fit Fest 7.0.<br /><em>Ibadan Edition.</em></>,
@@ -20,15 +29,6 @@ const slides = [
     primary: { label: "View anniversary event", href: "/event/eim-at-10" },
     secondary: { label: "See all events", href: "/events" },
     image: "/images/events/exercise-is-medicine-10-tour.jpg",
-  },
-  {
-    type: "coach",
-    eyebrow: "Exercise is medicine",
-    title: <>Build strength.<br /><em>Own your life.</em></>,
-    copy: "Training that meets you where you are—and builds the discipline, confidence and body you are proud to live in.",
-    primary: { label: "Find your programme", href: "#programmes" },
-    secondary: { label: "Meet your coach", href: "/profile" },
-    image: "/images/gallery/hero-male-only.webp",
   },
 ];
 
