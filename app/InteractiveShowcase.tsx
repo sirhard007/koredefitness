@@ -17,6 +17,7 @@ type GalleryItem = {
   alt: string;
   label: string;
   caption: string;
+  home?: boolean;
 };
 
 const events: EventItem[] = [
@@ -37,6 +38,41 @@ const gallery: GalleryItem[] = [
     alt: "Coach Korede demonstrating a seated mobility stretch",
     label: "MOBILITY TRAINING",
     caption: "Controlled movement and flexibility",
+    home: true,
+  },
+  {
+    image: "/images/gallery/male-personal-coaching.webp",
+    alt: "Male personal strength coaching session visual",
+    label: "PERSONAL COACHING",
+    caption: "Technique, safety and steady progress",
+    home: true,
+  },
+  {
+    image: "/images/events/male-festival-grass.webp",
+    alt: "A coach leading a large outdoor group fitness session",
+    label: "COMMUNITY FITNESS",
+    caption: "People moving together with purpose",
+    home: true,
+  },
+  {
+    image: "/images/gallery/male-training-focus.webp",
+    alt: "Focused male athlete preparing for a training session",
+    label: "TRAINING MINDSET",
+    caption: "Consistency starts before the first rep",
+    home: true,
+  },
+  {
+    image: "/images/gallery/coach-korede-mobility-05.jpg",
+    alt: "Coach Korede demonstrating an energetic training stance",
+    label: "COACH-LED TRAINING",
+    caption: "Clear guidance in every session",
+    home: true,
+  },
+  {
+    image: "/images/gallery/male-community-grass.webp",
+    alt: "All-male group circuit training session on grass in varied sportswear",
+    label: "GROUP TRAINING",
+    caption: "Strength, energy and accountability",
   },
   {
     image: "/images/gallery/coach-korede-mobility-02.jpg",
@@ -57,12 +93,6 @@ const gallery: GalleryItem[] = [
     caption: "Strong foundations and confident movement",
   },
   {
-    image: "/images/gallery/coach-korede-mobility-05.jpg",
-    alt: "Coach Korede demonstrating an energetic training stance",
-    label: "COACH-LED TRAINING",
-    caption: "Clear guidance in every session",
-  },
-  {
     image: "/images/gallery/coach-korede-mobility-06.jpg",
     alt: "Coach Korede demonstrating a fitness movement indoors",
     label: "MOVE WITH PURPOSE",
@@ -73,24 +103,6 @@ const gallery: GalleryItem[] = [
     alt: "Coach Korede in an Exercise Is Medicine training session",
     label: "EXERCISE IS MEDICINE",
     caption: "Healthy living through purposeful movement",
-  },
-  {
-    image: "/images/gallery/male-community-grass.webp",
-    alt: "All-male group circuit training session on grass in varied sportswear",
-    label: "GROUP TRAINING",
-    caption: "Strength, energy and accountability",
-  },
-  {
-    image: "/images/gallery/male-personal-coaching.webp",
-    alt: "Male personal strength coaching session visual",
-    label: "PERSONAL COACHING",
-    caption: "Technique, safety and steady progress",
-  },
-  {
-    image: "/images/gallery/male-training-focus.webp",
-    alt: "Focused male athlete preparing for a training session",
-    label: "TRAINING MINDSET",
-    caption: "Consistency starts before the first rep",
   },
 ];
 
@@ -137,17 +149,18 @@ export function EventCards() {
   );
 }
 
-export function GalleryViewer() {
+export function GalleryViewer({ full = false }: { full?: boolean }) {
+  const displayedGallery = full ? gallery : gallery.filter((item) => item.home);
   const [active, setActive] = useState<number | null>(null);
   const close = () => setActive(null);
-  const previous = () => setActive((current) => current === null ? 0 : (current - 1 + gallery.length) % gallery.length);
-  const next = () => setActive((current) => current === null ? 0 : (current + 1) % gallery.length);
+  const previous = () => setActive((current) => current === null ? 0 : (current - 1 + displayedGallery.length) % displayedGallery.length);
+  const next = () => setActive((current) => current === null ? 0 : (current + 1) % displayedGallery.length);
   useModalControls(active !== null, close, previous, next);
 
   return (
     <>
       <div className="gallery-grid gallery-photos">
-        {gallery.map((item, index) => (
+        {displayedGallery.map((item, index) => (
           <figure className={`gallery-item ${index === 0 ? "gallery-featured" : ""}`} key={item.label}>
             <button type="button" className="gallery-open" onClick={() => setActive(index)} aria-label={`View ${item.label.toLowerCase()} image`}>
               <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
@@ -159,12 +172,12 @@ export function GalleryViewer() {
       </div>
 
       {active !== null && (
-        <div className="media-modal gallery-modal" role="dialog" aria-modal="true" aria-label={`${gallery[active].label} image viewer`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
+        <div className="media-modal gallery-modal" role="dialog" aria-modal="true" aria-label={`${displayedGallery[active].label} image viewer`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <button className="modal-close" type="button" onClick={close} aria-label="Close image viewer">×</button>
           <button className="modal-arrow modal-previous" type="button" onClick={previous} aria-label="View previous image">←</button>
           <figure className="gallery-modal-figure">
-            <img src={gallery[active].image} alt={gallery[active].alt} />
-            <figcaption><b>{gallery[active].label}</b><span>{gallery[active].caption}</span><small>{active + 1} / {gallery.length}</small></figcaption>
+            <img src={displayedGallery[active].image} alt={displayedGallery[active].alt} />
+            <figcaption><b>{displayedGallery[active].label}</b><span>{displayedGallery[active].caption}</span><small>{active + 1} / {displayedGallery.length}</small></figcaption>
           </figure>
           <button className="modal-arrow modal-next" type="button" onClick={next} aria-label="View next image">→</button>
         </div>

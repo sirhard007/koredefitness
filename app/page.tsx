@@ -143,6 +143,7 @@ export default function Home() {
             <p>Training-focused visual previews for gym coaching, community aerobics, festivals and fitness tours.</p>
           </div>
           <GalleryViewer />
+          <div className="section-page-link gallery-page-link"><a className="text-link" href="/gallery">View full gallery <span>→</span></a></div>
           <p className="gallery-disclaimer">Coach Korede’s supplied training photos are featured alongside supporting presentation visuals.</p>
         </div>
       </section>

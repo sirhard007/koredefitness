@@ -175,6 +175,8 @@ h1 em, h2 em { color: var(--lime); font-style: normal; }
 .video-card figcaption small { grid-column:2; color:rgba(255,255,255,.58); font-size:10px; }
 .live-dot { grid-row:1/3; width:9px; height:9px; border-radius:50%; background:var(--lime); box-shadow:0 0 0 0 rgba(20,185,241,.65); animation:livePulse 1.8s infinite; }
 .gallery-disclaimer { margin:18px 0 0; color:rgba(255,255,255,.38); font-size:9px; line-height:1.6; text-align:center; }
+.gallery-page-link { margin-top:28px; color:var(--lime); }
+.gallery-page .gallery { padding-top:90px; }
 
 .media-modal { position:fixed; z-index:1000; inset:0; padding:40px; display:flex; align-items:center; justify-content:center; background:rgba(5,6,4,.94); backdrop-filter:blur(12px); animation:modalIn .22s ease both; }
 .modal-close { position:fixed; z-index:3; top:24px; right:28px; width:46px; height:46px; border:1px solid rgba(255,255,255,.25); border-radius:50%; background:rgba(15,16,13,.78); color:white; font-size:29px; line-height:1; cursor:pointer; }

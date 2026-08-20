@@ -9,7 +9,7 @@ const links = [
   ["Services", "/services"],
   ["Events", "/events"],
   ["Blog", "/blog"],
-  ["Gallery", "/#gallery"],
+  ["Gallery", "/gallery"],
 ];
 
 export default function MobileNav({ whatsappBase }: { whatsappBase: string }) {
