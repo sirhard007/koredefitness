@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type TouchEvent } from "react";
 
 const slides = [
   {
-    type: "coach",
-    eyebrow: "Exercise is medicine",
-    title: <>Build strength.<br /><em>Own your life.</em></>,
-    copy: "Training that meets you where you are—and builds the discipline, confidence and body you are proud to live in.",
-    primary: { label: "Find your programme", href: "#programmes" },
-    secondary: { label: "Meet your coach", href: "/profile" },
-    image: "/images/gallery/hero-male-only.webp",
+    type: "eim",
+    eyebrow: "Anniversary fitness tour · September 16–October 17, 2026",
+    title: <>Exercise Is Medicine.<br /><em>Celebrating 10 years.</em></>,
+    copy: "Join the 10-location anniversary fitness tour across Kwara State and its environs, followed by the Grand Finale at Banquet Hall, Ilorin.",
+    primary: { label: "View anniversary event", href: "/event/eim-at-10" },
+    secondary: { label: "See all events", href: "/events" },
+    image: "/images/events/exercise-is-medicine-10-tour.jpg",
   },
   {
     type: "tabata",
@@ -22,18 +22,19 @@ const slides = [
     image: "/images/events/tabata-fit-fest-7-ibadan.jpg",
   },
   {
-    type: "eim",
-    eyebrow: "Anniversary fitness tour · September 16–October 17, 2026",
-    title: <>Exercise Is Medicine.<br /><em>Celebrating 10 years.</em></>,
-    copy: "Join the 10-location anniversary fitness tour across Kwara State and its environs, followed by the Grand Finale at Banquet Hall, Ilorin.",
-    primary: { label: "View anniversary event", href: "/event/eim-at-10" },
-    secondary: { label: "See all events", href: "/events" },
-    image: "/images/events/exercise-is-medicine-10-tour.jpg",
+    type: "coach",
+    eyebrow: "Exercise is medicine",
+    title: <>Build strength.<br /><em>Own your life.</em></>,
+    copy: "Training that meets you where you are—and builds the discipline, confidence and body you are proud to live in.",
+    primary: { label: "Find your programme", href: "#programmes" },
+    secondary: { label: "Meet your coach", href: "/profile" },
+    image: "/images/gallery/hero-male-only.webp",
   },
 ];
 
 export default function HomeHeroSlider() {
   const [active, setActive] = useState(0);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => setActive((current) => (current + 1) % slides.length), 6500);
@@ -43,9 +44,24 @@ export default function HomeHeroSlider() {
   const selectSlide = (index: number) => setActive(index);
   const previous = () => setActive((current) => (current - 1 + slides.length) % slides.length);
   const next = () => setActive((current) => (current + 1) % slides.length);
+  const handleTouchStart = (event: TouchEvent<HTMLElement>) => {
+    const touch = event.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+  const handleTouchEnd = (event: TouchEvent<HTMLElement>) => {
+    if (!touchStart.current) return;
+    const touch = event.changedTouches[0];
+    const distanceX = touch.clientX - touchStart.current.x;
+    const distanceY = touch.clientY - touchStart.current.y;
+    touchStart.current = null;
+
+    if (Math.abs(distanceX) < 45 || Math.abs(distanceX) <= Math.abs(distanceY)) return;
+    if (distanceX < 0) next();
+    else previous();
+  };
 
   return (
-    <section className="hero hero-slider" id="top" aria-roledescription="carousel" aria-label="KoredeFitness highlights">
+    <section className="hero hero-slider" id="top" aria-roledescription="carousel" aria-label="KoredeFitness highlights" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       {slides.map((slide, index) => (
         <article
           className={`hero-slide hero-slide-${slide.type} ${index === active ? "is-active" : ""}`}

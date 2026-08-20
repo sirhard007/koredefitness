@@ -60,7 +60,7 @@ h1 em, h2 em { color: var(--lime); font-style: normal; }
 .hero-proof small { margin-top: 2px; color: rgba(255,255,255,.5); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
 .scroll-cue { position: absolute; z-index: 3; bottom: 49px; left: 4vw; writing-mode: vertical-rl; font-size: 8px; letter-spacing: .18em; color: rgba(255,255,255,.5); display: flex; gap: 10px; align-items: center; }
 .scroll-cue span { color: var(--lime); font-size: 15px; }
-.hero-slider { display:block; }
+.hero-slider { display:block; touch-action:pan-y; }
 .hero-slide { position:absolute; inset:0; display:flex; align-items:center; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .7s ease,visibility .7s ease; }
 .hero-slide.is-active { opacity:1; visibility:visible; pointer-events:auto; }
 .hero-slide .hero-content { width:min(1160px,calc(100% - 48px)); }
@@ -482,11 +482,11 @@ footer { background:#041225; color:white; padding:70px 0 25px; }
   .hero-slide-tabata h1,.hero-slide-eim h1 { max-width:520px; font-size:45px; }
   .hero-slide-tabata .hero-image,.hero-slide-eim .hero-image { background-position:center; background-size:cover; }
   .hero-slide-tabata .hero-overlay,.hero-slide-eim .hero-overlay { background:linear-gradient(90deg,rgba(4,18,43,.97),rgba(5,28,59,.78)),linear-gradient(0deg,rgba(3,18,42,.96) 0%,rgba(3,18,42,.25) 100%); }
-  .hero-controls { bottom:104px; }
+  .hero-controls { display:none; }
   .hero h1 { font-size:53px; }
   .hero-copy { font-size:15px; }
   .hero-actions { align-items:flex-start; flex-direction:column; gap:22px; }
-  .hero-proof { bottom:30px; width:calc(100% - 30px); justify-content:space-between; left:15px; gap:8px; }
+  .hero-proof { display:none; }
   .hero-proof strong { font-size:22px; }
   .hero-proof small { font-size:7px; }
   .ticker { font-size:11px; }
