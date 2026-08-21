@@ -57,13 +57,13 @@ export default function ServicesPage() {
 
       <section className="service-process">
         <div className="page-shell">
-          <p className="eyebrow"><span /> How it starts</p>
+          <p className="eyebrow"><span /> Get Started</p>
           <div className="process-grid">
             <div><b>01</b><h3>Share your goal</h3><p>Tell us what you want to achieve and where you prefer to train.</p></div>
             <div><b>02</b><h3>Get assessed</h3><p>Your current fitness, routine and needs guide the right starting point.</p></div>
             <div><b>03</b><h3>Start your plan</h3><p>Train with structure, clear guidance, accountability and progress tracking.</p></div>
           </div>
-          <a className="button" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20am%20ready%20to%20discuss%20my%20fitness%20goal.`} target="_blank" rel="noreferrer">Start on WhatsApp <span>↗</span></a>
+          <a className="button" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20am%20ready%20to%20discuss%20my%20fitness%20goal.`} target="_blank" rel="noreferrer">Get Started on WhatsApp <span>↗</span></a>
         </div>
       </section>
       <SiteFooter />

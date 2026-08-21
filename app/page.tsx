@@ -156,7 +156,6 @@ export default function Home() {
         <div className="page-shell quote-wrap">
           <span className="quote-mark">“</span>
           <blockquote>Korede didn’t just hand me a workout plan. He helped me understand what I was capable of—and held me to it.</blockquote>
-          <p><strong>SAMPLE TESTIMONIAL</strong> · Replace with verified client feedback</p>
         </div>
       </section>
 
@@ -178,7 +177,7 @@ export default function Home() {
           <p className="eyebrow"><span /> Your next chapter</p>
           <h2>Ready to become<br /><em>your strongest self?</em></h2>
           <p>Tell us your goal. We’ll help you choose the right place to start.</p>
-          <a className="button" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20am%20ready%20to%20start%20my%20fitness%20journey.`} target="_blank" rel="noreferrer">Start on WhatsApp <span>↗</span></a>
+          <a className="button" href={`${whatsappBase}?text=Hello%20KoredeFitness%2C%20I%20am%20ready%20to%20start%20my%20fitness%20journey.`} target="_blank" rel="noreferrer">Get Started on WhatsApp <span>↗</span></a>
         </div>
       </section>
 
